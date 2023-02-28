@@ -22,7 +22,7 @@
         <th style="width:20%">Name</th>
         <th style="width:10%">Gender</th>
         <th style="width:10%">Curriculum</th>
-        <th style="width:10%"></th>
+        <th style="width:10%"></th> 
       </tr>
     </thead>
     <tbody>
