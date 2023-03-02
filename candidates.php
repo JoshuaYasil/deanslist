@@ -24,6 +24,7 @@
         <th style="width:20%">Name</th>
         <th style="width:10%">Gender</th>
         <th style="width:10%">Curriculum</th>
+        <th style="width:10%">Application Record</th>
         <th style="width:10%"><center><label><input type="checkbox" id="selectall">Select All</label></center></th>
       </tr>
     </thead>
@@ -43,6 +44,7 @@
         <td><?php echo $row['LASTNAME'] . ' ' . $row['FIRSTNAME']. ' ' . $row['MIDDLENAME'] ?></td>
         <td><?php echo $row['GENDER'] ?></td>
         <td><?php echo $row['PROGRAM'] ?></td>
+        <td><center><a class="btn btn-info" href="rms.php?page=record&id=<?php echo $row['STUDENT_ID'] ?>&prog=<?php echo $row2['PROGRAM']?>">View Records</a></center></td>
         <td><center><input type="checkbox" name="id[]" class="checkitems" value="<?php echo $row['STUDENT_ID'] ?>"></center></td>
       </tr>
       <?php

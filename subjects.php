@@ -4,8 +4,7 @@
             include 'newsubject.php';
                 ?> 
        <div class="col-md-8 " id="s_page">
-        
-             
+
               <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">List of Subjects</h3>
@@ -16,6 +15,7 @@
     <thead>
       <tr>
         <th style="width:20%">Subjects</th>
+        <th style="width:20%">Units</th>
         <th style="width:10%">Applicable For</th>
         <th style="width:10%">Description</th>
         <th style="width:10%"></th>
@@ -25,18 +25,18 @@
     <?php
     include 'db.php';
 
-    
     $sql=  mysqli_query($conn, "SELECT *,`FOR` as para FROM subjects Order by SUBJECT ");
     while($row = mysqli_fetch_assoc($sql)) {
 
         $count = mysqli_num_rows($sql);
-     
+
     ?>
 
       <tr>
          <input type="hidden" id="id<?php echo $row["SUBJECT_ID"] ?>" name="id" value="<?php echo $row['SUBJECT_ID'] ?>">
         <td><input id="sub<?php echo $row["SUBJECT_ID"] ?>"  name="subj" type="text" style="border:0px" value="<?php echo $row['SUBJECT'] ?>" readonly></td>
-          <td><input id="para<?php echo $row["SUBJECT_ID"] ?>"  name="subj" type="text" style="border:0px" value="<?php echo $row['para'] ?>" readonly></td>
+        <td><input id="units<?php echo $row["SUBJECT_ID"] ?>"  name="units" type="int" style="border:0px" value="<?php echo $row['UNITS'] ?>" readonly></td>
+        <td><input id="para<?php echo $row["SUBJECT_ID"] ?>"  name="subj" type="text" style="border:0px" value="<?php echo $row['para'] ?>" readonly></td>
         <td><input id="des<?php echo $row["SUBJECT_ID"] ?>" name="desc" type="text" style="border:0px;width:100%" value="<?php echo $row['DESCRIPTION'] ?>" readonly></td>
         <td><center><a onclick="update_subject(<?php echo $row["SUBJECT_ID"] ?>)" class="btn btn-info" ><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit</a></center></td>
       </tr>
@@ -46,7 +46,7 @@
     }
      mysqli_close($conn);
       ?>
-      
+
     </tbody>
   </table>
 </div>
@@ -55,10 +55,11 @@
 
 <script>
   function update_subject($i){
-    var act,sub,para,desc,i =$i;
+    var act,sub,units,para,desc,i =$i;
       para = $("#para"+i).val();
       $("#id").val($("#id"+i).val());
       $("#sub").val($("#sub"+i).val());
+      $("#units").val($("#units"+i).val());
       $("#para").html(para);
       $("#des").val($("#des"+i).val());
       $("#head").html("Update Subject");
@@ -89,6 +90,18 @@
             <?php if(isset($errors['sub'])){echo "<div class='erlert'><h5>" .$errors['sub']. "</h5></div>"; } ?>
             </p>
               </div>
+              <div class="form-group">
+              <label for="units" class="cols-sm-2 control-label">Units</label>
+              <div class="cols-sm-4">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-book fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" id="units" name="units" id="units"
+                  style="width:200px"  placeholder="Enter Units" value="<?php if(isset($_POST['units'])){echo $_POST['units'];} ?>"/>
+                </div>
+                 <p>
+            <?php if(isset($errors['units'])){echo "<div class='erlert'><h5>" .$errors['units']. "</h5></div>"; } ?>
+            </p>
+              </div>
             </div>
             <div class="form-group">
               <label for="sub" class="cols-sm-2 control-label">For</label>
@@ -115,7 +128,7 @@
               <label for="des" class="cols-sm-2 control-label">Description</label>
               <div class="cols-sm-4">
                 <div class="input-group">
-                  <textarea type="text" class="form-control" name="des" id="des"  
+                  <textarea type="text" class="form-control" name="des" id="des"
                   style="width:225px;height:50px" placeholder="Enter Description" value="<?php if(isset($_POST['des'])){echo $_POST['des'];} ?>"/></textarea>
                 </div>
              <p>
@@ -129,7 +142,7 @@
             <input type="reset" class="btn btn-info " id="reset" name="reset" value="Cancel">
               <button class="btn btn-info" id="btn_add">Add</button>
             </div>
-            
+
           </form>
         </div>
       </div>

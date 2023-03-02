@@ -372,6 +372,7 @@ INSERT INTO `student_year_info` (`SYI_ID`, `STUDENT_ID`, `SCHOOL`, `YEAR`, `SECT
 CREATE TABLE `subjects` (
   `SUBJECT_ID` int(11) NOT NULL,
   `SUBJECT` varchar(50) NOT NULL,
+  `UNITS` int(11) NOT NULL,
   `FOR` varchar(10) NOT NULL,
   `DESCRIPTION` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -380,9 +381,9 @@ CREATE TABLE `subjects` (
 -- Dumping data for table `subjects`
 --
 
-INSERT INTO `subjects` (`SUBJECT_ID`, `SUBJECT`, `FOR`, `DESCRIPTION`) VALUES
-(1, 'Englis', 'All', 'English'),
-(2, 'Math', 'All', 'Math');
+INSERT INTO `subjects` (`SUBJECT_ID`, `SUBJECT`, `UNITS`, `FOR`, `DESCRIPTION`) VALUES
+(1, 'Englis', 3, 'All', 'English'),
+(2, 'Math', 2,'All', 'Math');
 
 -- --------------------------------------------------------
 

@@ -4,7 +4,7 @@
 
        <div class="col-md-12"> 
        <div class="row">
-      <div class="alert alert-success" id="correct"> Student is now removed from Candidate of Promotion!</div>
+      <div class="alert alert-success" id="correct"> Student is now removed from Dean's List</div>
         </div>   
        <div class="panel panel-default">
         <div class="panel-heading">
@@ -21,6 +21,8 @@
        
        
         <th style="width:10%">LRN NO.</th>
+        <th style="width:20%">Rank</th>
+        <th style="width:20%">GPA</th>
         <th style="width:20%">Name</th>
         <th style="width:10%">Gender</th>
         <th style="width:10%">Curriculum</th>
@@ -38,8 +40,10 @@
 
     ?>
       <tr>
-        
+
         <td><?php echo $row['LRN_NO'] ?></td>
+        <td><?php echo $row['RANK'] ?></td>
+        <td><?php echo $row['GPA'] ?></td>
         <td><?php echo $row['LASTNAME'] . ' ' . $row['FIRSTNAME']. ' ' . $row['MIDDLENAME'] ?></td>
         <td><?php echo $row['GENDER'] ?></td>
         <td><?php echo $row['PROGRAM'] ?></td>

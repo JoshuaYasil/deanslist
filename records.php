@@ -1,7 +1,7 @@
 
           <h1 class="page-header">Student Records</h1>
 
-       <div class="col-md-12">   
+       <div class="col-md-12">
        <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">Students List</h3>
@@ -39,7 +39,7 @@
     }
     } mysqli_close($conn);
       ?>
-      
+
     </tbody>
   </table>
 </div>
