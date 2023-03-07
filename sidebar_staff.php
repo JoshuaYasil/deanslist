@@ -41,20 +41,6 @@ $school_year=$s['school_year'];
         </li>
     </ul>
 </li>
-<li>
-    <a href="javascript:void(0)" data-toggle="collapse" data-target="#reportsCollapse"><i class="fa fa-fw fa-file"></i> Downloadables      <i class="fa fa-fw fa-caret-down"></i></a>
-    <ul id="reportsCollapse" class="collapse">
-        <li>
-            <a href="rms.php?page=report"><i class="fa fa-fw fa-files-o"></i> Form 137</a>
-        </li>
-        <li>
-            <a href="#" data-toggle="modal" data-target="#s_report"><i class="fa fa-fw fa-files-o"></i> Students List</a>
-        </li>
-        <li>
-            <a href="rms.php?page=candidates_report&school_year=<?php echo $school_year ?>" ><i class="fa fa-fw fa-file-text-o"></i> Candidates Report</a>
-        </li>
-    </ul>
-</li>
 </ul>
 <script>
     $('.side-nav li a').each(function(){
@@ -67,5 +53,3 @@ $school_year=$s['school_year'];
         }
     })
 </script>
-
-                

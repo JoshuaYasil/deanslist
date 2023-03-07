@@ -18,8 +18,7 @@
         <input type="hidden" name="sy" id="sy" value="<?php echo $_GET['sy'] ?>">
     <thead>
       <tr id="heads">
-       
-       
+
         <th style="width:10%">LRN NO.</th>
         <th style="width:20%">Rank</th>
         <th style="width:20%">GPA</th>
@@ -35,8 +34,6 @@
 
     $sql=  mysqli_query($conn, "SELECT * FROM student_info left join program on student_info.PROGRAM=program.PROGRAM_ID WHERE STUDENT_ID IN (SELECT STUDENT_ID FROM promotion_candidates) ");
     while($row = mysqli_fetch_assoc($sql)) {
-      
-
 
     ?>
       <tr>

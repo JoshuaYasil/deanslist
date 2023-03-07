@@ -23,7 +23,6 @@
     <i class="glyphicon glyphicon-print"></i>PRINT</button>
 </h1>
 
-            
           <div class="container">
          <span id="retcode"></span>
           <div class="row">

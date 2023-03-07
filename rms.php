@@ -44,7 +44,7 @@
                 <div class="col-md-1">
                   <!-- <img src="" style="height:48px;width:50px;align:center" alt=""> -->
                 </div>
-                                
+
                 <a class="navbar-brand" href=""><b>&nbsp;&nbsp;&nbsp; Dean's List System</b></a>
             </div>
             <!-- Top Menu Items -->
@@ -204,8 +204,7 @@ if (!empty($page)) {
 
       <div class="modal fade" id="s_report" role="dialog">
                 <div class="modal-dialog modal-sm">
-     
-                     
+
                 <div class="modal-content">
                     <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal">&times;</button>

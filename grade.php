@@ -54,18 +54,13 @@
       $("#grade").val($("#grade"+i).val());
       $("#head").html('Update Grade');
       $("#btn_add").html('Update');
-     
-  
-     
-
-
 
   }
 </script>
 
 
       <div class="col-md-4" id="">
-        
+
             <div class="container frm-new">
       <div class="row main">
         <div class="main-login main-center">
